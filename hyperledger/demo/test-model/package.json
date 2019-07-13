@@ -1,0 +1,11 @@
+{
+  "name": "test-model",
+  "version": "0.0.1",
+  "description": "test model my demo",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "Mimar Aslan",
+  "email": "mimar.aslan@gmail.com",
+  "license": "Apache-2.0"
+}
