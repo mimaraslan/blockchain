@@ -31,13 +31,13 @@ describe('Starting tests for angular-test', function() {
     })
   });
 
-  it('network-name should be test-bna@0.0.2',() => {
+  it('network-name should be test-bna@0.0.1',() => {
     element(by.css('.network-name')).getWebElement()
     .then((webElement) => {
       return webElement.getText();
     })
     .then((txt) => {
-      expect(txt).toBe('test-bna@0.0.2.bna');
+      expect(txt).toBe('test-bna@0.0.1.bna');
     });
   });
 

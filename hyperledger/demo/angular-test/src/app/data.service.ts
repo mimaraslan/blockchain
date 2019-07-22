@@ -33,7 +33,7 @@ export class DataService<Type> {
 
     public getAll(ns: string): Observable<Type[]> {
         console.log('GetAll ' + ns + ' to ' + this.actionUrl + ns);
-        return this.http.get(`${this.actionUrl}${ns}`)
+        return this.http.get(`http://localhost:3000${this.actionUrl}${ns}`)
           .map(this.extractData)
           .catch(this.handleError);
     }
@@ -41,7 +41,7 @@ export class DataService<Type> {
     public getSingle(ns: string, id: string): Observable<Type> {
         console.log('GetSingle ' + ns);
 
-        return this.http.get(this.actionUrl + ns + '/' + id + this.resolveSuffix)
+        return this.http.get('http://localhost:3000'+this.actionUrl + ns + '/' + id + this.resolveSuffix)
           .map(this.extractData)
           .catch(this.handleError);
     }
@@ -51,7 +51,7 @@ export class DataService<Type> {
         console.log('Add ' + ns);
         console.log('asset', asset);
 
-        return this.http.post(this.actionUrl + ns, asset)
+        return this.http.post('http://localhost:3000'+this.actionUrl + ns, asset)
           .map(this.extractData)
           .catch(this.handleError);
     }
@@ -61,7 +61,7 @@ export class DataService<Type> {
         console.log('what is the id?', id);
         console.log('what is the updated item?', itemToUpdate);
         console.log('what is the updated item?', JSON.stringify(itemToUpdate));
-        return this.http.put(`${this.actionUrl}${ns}/${id}`, itemToUpdate)
+        return this.http.put(`http://localhost:3000${this.actionUrl}${ns}/${id}`, itemToUpdate)
           .map(this.extractData)
           .catch(this.handleError);
     }
@@ -69,7 +69,7 @@ export class DataService<Type> {
     public delete(ns: string, id: string): Observable<Type> {
         console.log('Delete ' + ns);
 
-        return this.http.delete(this.actionUrl + ns + '/' + id)
+        return this.http.delete('http://localhost:3000'+this.actionUrl + ns + '/' + id)
           .map(this.extractData)
           .catch(this.handleError);
     }

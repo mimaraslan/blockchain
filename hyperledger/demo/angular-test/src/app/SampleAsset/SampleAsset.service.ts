@@ -22,7 +22,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class SampleAssetService {
 
-  private NAMESPACE = 'com.mimaraslan.SampleAsset';
+  private NAMESPACE = 'SampleAsset';
 
   constructor(private dataService: DataService<SampleAsset>) {
   };
